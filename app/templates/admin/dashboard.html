@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<h1>Welcome, Admin {{ current_user.username }}!</h1>
+<p>Here you can manage courses, subjects, and upload study materials.</p>
+{% endblock %}
+<h1>Admin Dashboard</h1>
+<ul>
+    <li><a href="{{ url_for('admin.courses') }}">Add Course</a></li>
+    <li><a href="{{ url_for('admin.subjects') }}">Add Subject</a></li>
+    <li><a href="{{ url_for('admin.uploads') }}">Upload Material</a></li>
+</ul>
+
+

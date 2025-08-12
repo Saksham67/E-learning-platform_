@@ -1,0 +1,11 @@
+<h2>Upload Material</h2>
+<form method="POST" enctype="multipart/form-data">
+    <select name="subject_id" required>
+        {% for subject in subjects %}
+            <option value="{{ subject.id }}">{{ subject.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="description" placeholder="Description">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>

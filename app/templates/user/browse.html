@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Available Courses</h2>
+<div class="course-list">
+    {% for course in courses %}
+        <div class="course-card">
+            <h3>{{ course.name }}</h3>
+            <p>{{ course.description }}</p>
+            <ul>
+                {% for material in course.materials %}
+                    <li>
+                        <a href="{{ url_for('static', filename=material.file_path) }}" target="_blank">
+                            {{ material.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No courses available yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
